@@ -26,5 +26,6 @@ COPY --from=ui /usr/src/app/ui/semantic/dist/semantic.min.js /static/dist/semant
 COPY --from=ui /usr/src/app/ui/semantic/dist/themes/default/assets /static/dist/themes/default/
 COPY --from=app /go/src/app/rancher-demo /bin/rancher-demo
 COPY templates /templates
+RUN apk --no-cache add curl
 EXPOSE 8080
 ENTRYPOINT ["/bin/rancher-demo"]
